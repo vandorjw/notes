@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Contact Details{% endblock %}
+
+{% block extra_head %}
+<meta name="robots" content="index,follow">
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+
+      <div class="col-md-8">
+      {% if object_list %}  
+      {% for item in object_list %}
+   
+        {% if item.url %}
+          <a href="{{ item.url }}" title="{{ item.name }}" target="_self"><h3>{{item.name}}</h3></a>
+        {% else %}
+          <h3>{{item.name}}</h3>
+        {% endif %}
+        <p>{{item.description}}</p>
+
+        
+      {% endfor %}
+      {% endif %} 
+      </div>
+
+    </div><!-- End Row -->
+</div><!-- End Container -->
+
+{% endblock content %}
+
