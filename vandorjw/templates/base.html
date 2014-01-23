@@ -5,9 +5,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
+    <meta name="description" content="{% block meta_description %}{% endblock %}">
+    <meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
     <meta name="author" content="Joost Vandorp" >
-    <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
+    <meta name="google-site-verification" content="hCgzWEOL4xbNmjEnrkp2rwchRcz0tLflfcp9o_0qz0s" />
+
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}"> 
+    <link rel="apple-itouch-icon" href="{% static 'apple-touch-icon.png' %}">
 
     <title>{% block title %}{% endblock %}</title>
 

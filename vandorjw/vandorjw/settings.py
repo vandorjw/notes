@@ -15,7 +15,7 @@ from .secrets import PROJECT_DATABASE_HOST
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 DEBUG = False
 TEMPLATE_DEBUG = False
-ALLOWED_HOSTS = ['vandorjw.me',]
+ALLOWED_HOSTS = ['vandorjw.me','notes.vandorjw.me',]
 
 EXTERNAL_APPS = (
     'django.contrib.admin',
