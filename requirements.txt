@@ -1,0 +1,10 @@
+Django
+Pillow
+South
+django-browserid
+django-csp
+django-secure
+fancy-tag
+psycopg2
+django-debug-toolbar
+six

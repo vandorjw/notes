@@ -87,3 +87,6 @@ coverage.xml
 
 # Sphinx documentation
 docs/_build/
+
+#Deployment Variables
+deployment_variables.py

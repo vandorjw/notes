@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load staticfiles browserid %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,6 +17,9 @@
     <!-- Custom styles for this template -->
     <link href="{% static 'dist/css/sticky-footer-navbar.css' %}" rel="stylesheet">
 
+    <!-- BrowserID CSS -->
+    {% browserid_css %}
+    
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
@@ -30,7 +33,7 @@
     {% endblock extra_head %}
   </head>
 
-  <body>
+  <body>{% comment %}Outputs an invisible element that stores info about the current user. Must be within the <body> tag and appear only once.{% endcomment %}
 
     <!-- Wrap all page content here -->
     <div id="wrap">
@@ -41,6 +44,18 @@
         <a class="navbar-brand" href="{% url 'blog:article_list' %}">home</a>
         <a class="navbar-brand pull-right" href="{% url 'contact:contact_me' %}">contact</a>
         </div>
+      </div>
+
+      <div class="container">
+      <header>
+        <div class="authentication">
+          {% if user.is_authenticated %}
+            {% browserid_logout text='Logout' %}
+          {% else %}
+            {% browserid_login text='Login' color='dark' %}
+          {% endif %}
+        </div>
+      </header>
       </div>
 
       <!-- Begin page content -->
@@ -63,7 +78,10 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://login.persona.org/include.js"></script>
     <script src="{% static 'dist/js/bootstrap.min.js' %}"></script>
+    {% browserid_js %}{% comment %} Outputs the <script> tags for the button JavaScript. {% endcomment %}
+
   </body>
 </html>
 
