@@ -12,6 +12,5 @@ elif PROJECT_STATUS == 3:
 else:
    pass # PROJECT_STATUS undefined
 
-	
 from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()

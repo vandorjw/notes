@@ -84,9 +84,16 @@ coverage.xml
 # Django stuff:
 *.log
 *.pot
+<<<<<<< HEAD
 
 # Sphinx documentation
 docs/_build/
 
 #Deployment Variables
 deployment_variables.py
+=======
+secrets.py
+
+# Sphinx documentation
+docs/_build/
+>>>>>>> 2e49acb0e19dd4743e996ac7b2bd1bbbad0074af

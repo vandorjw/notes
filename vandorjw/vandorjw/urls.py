@@ -28,5 +28,6 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^browserid/', include('django_browserid.urls')),
     url(r"^contact/$", include('contact.urls', namespace='contact', app_name='contact')),
+    url(r'^tinymce/', include('tinymce.urls')),
     url(r"^", include('blog.urls', namespace='blog', app_name='blog')),
 )
